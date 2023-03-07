@@ -1,0 +1,11 @@
+{
+  "main" : "main.js",
+  "bin" : "main.js",
+
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "wait-console-input": "^0.1.7"
+  }
+  
+  
+}
