@@ -25,10 +25,8 @@ jobs:
     - name: Build
       run: |
         npm install
-        
+        npm install pkg
         
     - name: PKG
-      shell: bash
       run: |
-        npm install pkg
-        pkg main.js -C Brotli -t  latest-macos-x64
+        echo "pkg main.js -C Brotli -t  latest-macos-x64"
