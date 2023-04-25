@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: |
         npm install
-        pkg YourApp.js -C Brotli -t  latest-macos-x64
+        pkg main.js -C Brotli -t  latest-macos-x64
