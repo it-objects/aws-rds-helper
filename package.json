@@ -5,6 +5,7 @@
   "dependencies": {
     "inquirer": "^8.2.4",
     "wait-console-input": "^0.1.7"
+    "pkg": "^5.8.1"
   }
   
   
