@@ -30,4 +30,5 @@ jobs:
     - name: PKG
       run: |
         echo "pkg main.js -C Brotli -t  latest-macos-x64"
+        tar -czvf main.tar.gz ./main
         ls
