@@ -33,13 +33,18 @@ jobs:
         tar -czvf main.tar.gz ./main
         ls
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: './main.tar.gz'
+      if: startsWith(github.ref, 'refs/tags/')
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Update Homebrew Formula
+      uses: izumin5210/action-homebrew-tap@releases/v0
       with:
-        tag_name: ${{ github.ref }}
-        release_name: ${{ github.ref }}
-        draft: false
-        prerelease: true
+        tap: it-objects/homebrew-aws-rds-helper
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tap-token: ${{ secrets.TAP_GITHUB_TOKEN }}
+      if: startsWith(github.ref, 'refs/tags/')
