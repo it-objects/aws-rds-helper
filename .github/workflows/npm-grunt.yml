@@ -30,3 +30,4 @@ jobs:
     - name: PKG
       run: |
         echo "pkg main.js -C Brotli -t  latest-macos-x64"
+        ls
