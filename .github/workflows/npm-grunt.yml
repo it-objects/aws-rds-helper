@@ -32,19 +32,12 @@ jobs:
         echo "pkg main.js -C Brotli -t  latest-macos-x64"
         tar -czvf main.tar.gz ./main
         ls
-
-    - name: Create GitHub Release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: './main.tar.gz'
-      if: startsWith(github.ref, 'refs/tags/')
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Update Homebrew Formula
-      uses: izumin5210/action-homebrew-tap@releases/v0
-      with:
-        tap: it-objects/homebrew-aws-rds-helper
-        token: ${{ secrets.GITHUB_TOKEN }}
-        tap-token: ${{ secrets.TAP_GITHUB_TOKEN }}
-      if: startsWith(github.ref, 'refs/tags/')
+        
+    - name: Get version
+      id: get_version
+      run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
+    
+    - name: Set SHA
+      id: shasum
+      run: |
+        echo ::set-output name=sha::"$(shasum -a 256 ./main.tar.gz | awk '{printf $1}')"
