@@ -38,3 +38,12 @@ jobs:
       with:
         name: main
         path: ./main
+        
+    - name: Clone repository
+      uses: actions/checkout@v2
+      with:
+        repository: guido.selinger/it-objects
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Move artifact
+      run: mv main aws-rds-helper
