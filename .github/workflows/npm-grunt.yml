@@ -39,11 +39,12 @@ jobs:
         name: main
         path: ./main
         
-    - name: Clone repository
-      uses: actions/checkout@v2
-      with:
-        repository: guido.selinger/it-objects
-        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Commit artifact
+      run: |
+        git config --global user.name guido.selinger
+        git config --global user.email guido.selinger@it-objects.de
+        git add .
+        git commit -m "Add artifact"
 
-    - name: Move artifact
-      run: mv main aws-rds-helper
+    - name: Push changes
+      run: git push
