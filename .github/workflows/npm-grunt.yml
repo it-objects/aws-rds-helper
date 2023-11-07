@@ -32,33 +32,9 @@ jobs:
         echo "pkg main.js -C Brotli -t  latest-macos-x64"
         tar -czvf main.tar.gz ./main
         ls
-        
-    - name: Get version
-      id: get_version
-      run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
-    
-    - name: Set SHA
-      id: shasum
-      run: |
-        echo ::set-output name=sha::"$(shasum -a 256 ./main.tar.gz | awk '{printf $1}')"
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload binary
+      uses: actions/upload-artifact@v2
       with:
-        tag_name: ${{ github.ref }}
-        release_name: ${{ github.ref }}
-        draft: false
-        prerelease: true
-        
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./main.tar.gz
-        asset_name: main.tar.gz
-        asset_content_type: application/gzip
+        name: main
+        path: main
