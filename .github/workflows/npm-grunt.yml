@@ -30,7 +30,7 @@ jobs:
     - name: PKG
       run: |
         echo "pkg main.js -C Brotli -t  latest-macos-x64"
-        mv ./main ./aws-helper
+        echo "mv ./main ./aws-helper"
         chmod a+x aws-helper
         tar -czvf aws-helper.tar.gz ./aws-helper
         ls
