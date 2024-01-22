@@ -30,15 +30,16 @@ jobs:
     - name: PKG
       run: |
         echo "pkg main.js -C Brotli -t  latest-macos-x64"
-        chmod a+x main
-        tar -czvf main.tar.gz ./main
+        mv main aws-helper
+        chmod a+x aws-helper
+        tar -czvf aws-helper.tar.gz ./aws-helper
         ls
 
     - name: Upload binary
       uses: actions/upload-artifact@v2
       with:
-        name: main
-        path: ./main
+        name: aws-helper
+        path: ./aws-helper
         
     - name: Commit artifact
       run: |
