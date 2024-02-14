@@ -29,7 +29,7 @@ jobs:
         npm install inquirer
         pkg main.js -C Brotli -t  latest-macos-x64
         ls
-        echo "mv ./main ./aws-helper"
+        mv ./main ./aws-helper
         ls
         chmod a+x aws-helper
         tar -czvf aws-helper.tar.gz ./aws-helper
