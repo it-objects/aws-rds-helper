@@ -24,7 +24,7 @@ jobs:
 
     - name: Build
       run: |
-        npm install pkg
+        npm install -g pkg
         pkg main.js -C Brotli -t  latest-macos-x64
         ls
         echo "mv ./main ./aws-helper"
