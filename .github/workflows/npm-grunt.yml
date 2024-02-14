@@ -29,17 +29,17 @@ jobs:
         npm install inquirer
         pkg main.js -C Brotli -t  latest-macos-x64
         ls
-        mv ./main ./aws-helper
+        mv ./main ./aws-rds-helper
         ls
-        chmod a+x aws-helper
-        tar -czvf aws-helper.tar.gz ./aws-helper
+        chmod a+x aws-rds-helper
+        tar -czvf aws-rds-helper.tar.gz ./aws-rds-helper
         ls
 
     - name: Upload binary
       uses: actions/upload-artifact@v2
       with:
-        name: aws-helper
-        path: ./aws-helper
+        name: aws-rds-helper
+        path: ./aws-rds-helper
         
     - name: Commit artifact
       run: |
@@ -53,5 +53,5 @@ jobs:
 
     - name: Create Tag
       run: |
-        git tag -a v1.0.2 -m "Version 1.0.2"
-        git push origin v1.0.2
+        git tag -a v1.0.3 -m "Version 1.0.3"
+        git push origin v1.0.3
