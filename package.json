@@ -2,7 +2,7 @@
   "main": "main.js",
   "bin": "main.js",
   "dependencies": {
-    "inquirer": "^8.2.4",
+    "inquirer": "^8.2.6",
     "pkg": "^5.8.1",
     "wait-console-input": "^0.1.7"
   }
