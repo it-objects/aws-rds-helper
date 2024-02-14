@@ -26,9 +26,6 @@ jobs:
       run: |
         npm install
         npm install pkg
-        
-    - name: PKG
-      run: |
         pkg main.js -C Brotli -t  latest-macos-x64
         ls
         echo "mv ./main ./aws-helper"
