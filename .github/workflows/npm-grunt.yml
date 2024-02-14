@@ -25,6 +25,8 @@ jobs:
     - name: Build
       run: |
         npm install -g pkg
+        npm install wait-console-input
+        npm install inquirer
         pkg main.js -C Brotli -t  latest-macos-x64
         ls
         echo "mv ./main ./aws-helper"
