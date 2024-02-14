@@ -7,7 +7,6 @@ const homedir = require('os').homedir();
 var final_profile;
 var instance_availability_zone;
 
-
 // Auswahl des Modus
 async function select_mode() {
   return new Promise((resolve, reject) => {
