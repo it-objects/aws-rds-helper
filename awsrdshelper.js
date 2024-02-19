@@ -346,7 +346,7 @@ async function create_profile() {
 //Mainfunction
 async function awsrdshelper() {
 
-  var awsrdshelper = await select_mode();
+  var mode = await select_mode();
 
 
   if (mode == "Connect via preset") {
