@@ -1,6 +1,6 @@
 {
-  "main": "main.js",
-  "bin": "main.js",
+  "main": "aws-rds-helper.js",
+  "bin": "aws-rds-helpüer.js",
   "dependencies": {
     "inquirer": "^8.2.6",
     "pkg": "^5.8.1",
