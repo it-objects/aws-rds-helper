@@ -51,5 +51,5 @@ jobs:
 
     - name: Create Tag
       run: |
-        git tag -a v1.0.5 -m "Version 1.0.5"
-        git push origin v1.0.5
+        git tag -a v1.0.6 -m "Version 1.0.6"
+        git push origin v1.0.6
