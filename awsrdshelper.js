@@ -112,7 +112,7 @@ async function check_sshkey() {
     }
   })
 }
-ys
+
 // Auswahl des Datenbank Instanz
 async function select_db() {
   return new Promise((resolve, reject) => {
