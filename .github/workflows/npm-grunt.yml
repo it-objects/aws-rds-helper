@@ -27,10 +27,9 @@ jobs:
         npm install -g pkg
         npm install wait-console-input
         npm install inquirer
-        pkg main.js -C Brotli -t  latest-macos-x64
+        pkg aws-rds-helper.js -C Brotli -t  latest-macos-x64
         ls
-        mv ./main ./aws-rds-helper
-        ls
+        # mv ./main ./aws-rds-helper
         chmod a+x aws-rds-helper
         tar -czvf aws-rds-helper.tar.gz ./aws-rds-helper
         ls
