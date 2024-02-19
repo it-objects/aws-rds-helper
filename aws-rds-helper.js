@@ -344,9 +344,9 @@ async function create_profile() {
 
 
 //Mainfunction
-async function main() {
+async function aws-rds-helper() {
 
-  var mode = await select_mode();
+  var aws-rds-helper = await select_mode();
 
 
   if (mode == "Connect via preset") {
@@ -360,7 +360,7 @@ async function main() {
 }
 
 
-main();
+aws-rds-helper();
 
 
 async function connect_once() {
