@@ -29,7 +29,6 @@ jobs:
         npm install inquirer
         pkg aws-rds-helper.js -C Brotli -t  latest-macos-x64
         ls
-        # mv ./main ./aws-rds-helper
         chmod a+x aws-rds-helper
         tar -czvf aws-rds-helper.tar.gz ./aws-rds-helper
         ls
@@ -49,3 +48,8 @@ jobs:
 
     - name: Push changes
       run: git push
+
+    - name: Create Tag
+      run: |
+        git tag -a v1.0.4 -m "Version 1.0.4"
+        git push origin v1.0.4
