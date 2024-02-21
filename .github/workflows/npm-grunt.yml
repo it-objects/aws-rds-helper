@@ -51,11 +51,12 @@ jobs:
 
     - name: Create Tag
       run: |
-        current_tag=$(git describe --abbrev=0 --tags)
-        IFS='.' read -r -a version_parts <<< "$current_tag"
+        current_tag=$(git describe --abbrev=0 --tags 2>/dev/null || echo "v0.0.0")
+        IFS='.' read -r -a version_parts <<< "${current_tag:1}"
         major="${version_parts[0]}"
         minor="${version_parts[1]}"
         patch="${version_parts[2]}"
-        new_tag="$major.$minor.$((patch + 1))"
+        new_tag="v$major.$minor.$((patch + 1))"
+
         git tag "$new_tag"
         git push origin "$new_tag"
