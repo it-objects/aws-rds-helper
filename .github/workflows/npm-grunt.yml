@@ -51,18 +51,11 @@ jobs:
 
     - name: Create Tag
       run: |
-      # git tag -a v1.0.11 -m "Version 1.0.11"
-      # git push origin v1.0.11
-      # Get the current tag version
         current_tag=$(git describe --abbrev=0 --tags)
-
-      # Increment the tag version
         IFS='.' read -r -a version_parts <<< "$current_tag"
         major="${version_parts[0]}"
         minor="${version_parts[1]}"
         patch="${version_parts[2]}"
         new_tag="$major.$minor.$((patch + 1))"
-
-      # Create a new tag with the incremented version
         git tag "$new_tag"
         git push origin "$new_tag"
