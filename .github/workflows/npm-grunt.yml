@@ -30,14 +30,14 @@ jobs:
         pkg awsrdshelper.js -C Brotli -t  latest-macos-x64
         ls
         chmod a+x awsrdshelper
-        tar -czvf awsrdshelper.tar.gz ./awsrdshelper
+        tar -czvf awsrdshelper.tar.gz ./aws-rds-helper
         ls
 
     - name: Upload binary
       uses: actions/upload-artifact@v2
       with:
-        name: awsrdshelper
-        path: ./awsrdshelper
+        name: aws-rds-helper
+        path: ./aws-rds-helper
         
     - name: Commit artifact
       run: |
