@@ -1,2 +1,2 @@
-#aws-rds-helper
+aws-rds-helper
 
