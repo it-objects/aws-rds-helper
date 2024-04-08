@@ -1,4 +1,4 @@
-name: NodeJS with Grunt 
+name: NodeJS with Grunt
 
 on:
   push:
@@ -27,9 +27,7 @@ jobs:
         npm install -g pkg
         npm install wait-console-input
         npm install inquirer
-        pkg awsrdshelper.js -C Brotli -t  latest-macos-x64
-        ls
-        cp awsrdshelper aws-rds-helper
+        pkg aws-rds-helper.js -C Brotli -t  latest-macos-x64
         chmod a+x aws-rds-helper
         tar -czvf aws-rds-helper.tar.gz ./aws-rds-helper
         ls
