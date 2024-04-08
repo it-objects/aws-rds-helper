@@ -30,7 +30,7 @@ jobs:
         pkg awsrdshelper.js -C Brotli -t  latest-macos-x64
         ls
         chmod a+x awsrdshelper
-        tar -czvf awsrdshelper.tar.gz ./aws-rds-helper
+        tar -czvf aws-rds-helper.tar.gz ./awsrdshelper
         ls
 
     - name: Upload binary
